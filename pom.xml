@@ -23,8 +23,12 @@
     </scm>
 
     <properties>
-        <dn.javax.jdo.version>3.2.0-release</dn.javax.jdo.version>
-        <dn.core.version>6.0.0-m1</dn.core.version>
+        <!--<dn.javax.jdo.version>3.2.0-release</dn.javax.jdo.version>-->
+        <!--<dn.core.version>6.0.0-m1</dn.core.version>-->
+        <dn.javax.jdo.version>3.2.2-SNAPSHOT</dn.javax.jdo.version>
+        <dn.core.version>6.0.4-SNAPSHOT</dn.core.version>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
     <build>
@@ -50,6 +54,19 @@
                         </Import-Package>
                     </instructions>
                 </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>3.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
             </plugin>
         </plugins>
     </build>
